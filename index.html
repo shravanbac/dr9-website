@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DR9 Engineering Associates LLC - Construction Management &amp; Services | Miami</title>
+    <title>DR9 Engineering and Construction - Construction Management & Services | South Florida</title>
+    <meta name="description" content="DR9 Engineering and Construction - South Florida's trusted construction management and construction services firm. Built on strength, delivered with excellence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Primary Color Palette - Blue & White */
@@ -12,14 +16,15 @@
             --light-blue: #b4c5e4;
             --accent-blue: #1e3a8a;
             --gold: #d4af37;
+            --gold-dark: #b8960c;
             --white: #ffffff;
             --off-white: #fbfff1;
             --dark-gray: #1a1a1a;
             --medium-gray: #4a5568;
             --light-gray: #f7fafc;
             
-            /* Typography - Enterprise Standards */
-            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --font-heading: 'Poppins', 'Inter', sans-serif;
             
             /* Spacing */
@@ -36,11 +41,7 @@
             --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: var(--font-primary);
@@ -49,10 +50,8 @@
             color: var(--dark-gray);
             background-color: var(--white);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         
-        /* Typography */
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
             font-weight: 600;
@@ -65,13 +64,8 @@
         h2 { font-size: 2.5rem; }
         h3 { font-size: 2rem; }
         h4 { font-size: 1.5rem; }
-        h5 { font-size: 1.25rem; }
-        h6 { font-size: 1rem; }
         
-        p {
-            margin-bottom: var(--spacing-sm);
-            color: var(--medium-gray);
-        }
+        p { margin-bottom: var(--spacing-sm); color: var(--medium-gray); }
         
         /* Header & Navigation */
         header {
@@ -84,61 +78,41 @@
         }
         
         nav {
-            max-width: 1280px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: var(--spacing-md) var(--spacing-lg);
+            padding: var(--spacing-sm) var(--spacing-xl);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: var(--spacing-lg);
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--spacing-sm);
             text-decoration: none;
+            flex-shrink: 0;
         }
         
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--gold) 0%, #ffffff 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary-blue);
-            box-shadow: var(--shadow-md);
-            border: 2px solid var(--gold);
+        .logo-img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
         }
-        
+
         .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .logo-text .company-name {
             font-family: var(--font-heading);
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary-blue);
-            letter-spacing: -0.02em;
-        }
-        
-        .logo-text .tagline {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
         }
         
         .nav-links {
             display: flex;
             gap: var(--spacing-lg);
             list-style: none;
+            margin-left: auto;
         }
         
         .nav-links a {
@@ -161,13 +135,8 @@
             transition: width 0.3s ease;
         }
         
-        .nav-links a:hover {
-            color: var(--primary-blue);
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--primary-blue); }
+        .nav-links a:hover::after { width: 100%; }
         
         .cta-button {
             background: var(--primary-blue);
@@ -179,12 +148,31 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             border: 2px solid var(--primary-blue);
+            margin-left: var(--spacing-lg);
+            flex-shrink: 0;
         }
         
         .cta-button:hover {
             background: var(--secondary-blue);
             border-color: var(--secondary-blue);
             box-shadow: var(--shadow-md);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 5px 5px 80px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: all 0.3s ease;
         }
         
         /* Hero Section */
@@ -194,6 +182,9 @@
             padding: var(--spacing-2xl) var(--spacing-lg);
             position: relative;
             overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
         }
         
         .hero::before {
@@ -212,29 +203,31 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            width: 100%;
         }
         
         .hero h1 {
             color: var(--white);
-            font-size: 3.5rem;
+            font-size: 3.25rem;
             margin-bottom: var(--spacing-md);
             max-width: 800px;
+            line-height: 1.15;
         }
         
-        .hero-accent {
-            color: var(--gold);
-        }
+        .hero-accent { color: var(--gold); }
         
         .hero p {
             font-size: 1.25rem;
             color: var(--light-blue);
             margin-bottom: var(--spacing-xl);
-            max-width: 600px;
+            max-width: 620px;
+            line-height: 1.7;
         }
         
         .hero-buttons {
             display: flex;
             gap: var(--spacing-md);
+            flex-wrap: wrap;
         }
         
         .btn-primary {
@@ -252,6 +245,7 @@
         }
         
         .btn-primary:hover {
+            background: var(--gold-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -289,9 +283,7 @@
             margin-bottom: var(--spacing-2xl);
         }
         
-        .section-header h2 {
-            margin-bottom: var(--spacing-sm);
-        }
+        .section-header h2 { margin-bottom: var(--spacing-sm); }
         
         .section-header p {
             font-size: 1.1rem;
@@ -334,12 +326,13 @@
         
         .service-card h3 {
             margin-bottom: var(--spacing-sm);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
         
         .service-card p {
             color: var(--medium-gray);
             line-height: 1.7;
+            margin-bottom: 0;
         }
         
         /* About Section */
@@ -357,20 +350,49 @@
         
         .about-image {
             width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, var(--light-blue) 0%, var(--secondary-blue) 100%);
+            height: 450px;
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
             box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
         }
         
-        .about-content h2 {
-            margin-bottom: var(--spacing-md);
+        .about-image img {
+            max-width: 70%;
+            max-height: 70%;
+            object-fit: contain;
         }
+        
+        .about-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--primary-blue);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-badge .number {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .about-badge .text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .about-content h2 { margin-bottom: var(--spacing-md); }
         
         .about-content p {
             margin-bottom: var(--spacing-md);
@@ -395,41 +417,44 @@
         .credentials p {
             color: var(--medium-gray);
             margin: 0;
+            font-size: 0.95rem;
         }
         
         /* Stats Section */
         .stats {
             background: var(--primary-blue);
-            padding: var(--spacing-2xl) var(--spacing-lg);
-            color: var(--white);
+            padding: var(--spacing-xl) var(--spacing-lg);
         }
         
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-xl);
             max-width: 1280px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-lg);
         }
         
         .stat-card {
             text-align: center;
+            color: var(--white);
         }
         
         .stat-number {
+            font-family: var(--font-heading);
             font-size: 3rem;
             font-weight: 700;
             color: var(--gold);
+            line-height: 1;
             margin-bottom: var(--spacing-xs);
-            font-family: var(--font-heading);
         }
         
         .stat-label {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--light-blue);
+            font-weight: 500;
         }
         
-        /* Why Choose Us Section */
+        /* Why Choose Section */
         .why-choose {
             padding: var(--spacing-2xl) var(--spacing-lg);
             background: var(--light-gray);
@@ -437,37 +462,45 @@
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: var(--spacing-lg);
         }
         
         .feature {
+            background: var(--white);
+            padding: var(--spacing-xl);
+            border-radius: 12px;
             text-align: center;
-            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
         
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto var(--spacing-md);
-            color: var(--secondary-blue);
             font-size: 2rem;
-            box-shadow: var(--shadow-md);
-            border: 3px solid var(--light-blue);
+            margin: 0 auto var(--spacing-md);
         }
         
         .feature h4 {
             margin-bottom: var(--spacing-sm);
-            color: var(--primary-blue);
+            font-size: 1.25rem;
         }
         
         .feature p {
             color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 0;
         }
         
         /* Contact Section */
@@ -478,72 +511,90 @@
         
         .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: var(--spacing-2xl);
         }
         
-        .contact-info {
+        .contact-info h3 {
+            margin-bottom: var(--spacing-lg);
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            color: var(--medium-gray);
+        }
+        
+        .contact-item a {
+            color: var(--secondary-blue);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover { text-decoration: underline; }
+        
+        .contact-form {
             background: var(--light-gray);
             padding: var(--spacing-xl);
             border-radius: 12px;
         }
         
-        .contact-info h3 {
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: start;
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary-blue);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            flex-shrink: 0;
-        }
-        
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-        }
-        
         .form-group {
-            display: flex;
-            flex-direction: column;
+            margin-bottom: var(--spacing-md);
         }
         
         .form-group label {
-            font-weight: 600;
+            display: block;
             margin-bottom: var(--spacing-xs);
-            color: var(--primary-blue);
+            font-weight: 500;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
         }
         
         .form-group input,
-        .form-group textarea,
-        .form-group select {
-            padding: var(--spacing-sm);
-            border: 2px solid var(--light-blue);
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--light-blue);
             border-radius: 6px;
             font-family: var(--font-primary);
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            color: var(--dark-gray);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: var(--white);
         }
         
         .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: var(--secondary-blue);
+            box-shadow: 0 0 0 3px rgba(48, 102, 190, 0.15);
         }
         
         .form-group textarea {
@@ -557,96 +608,139 @@
             padding: var(--spacing-md) var(--spacing-xl);
             border: none;
             border-radius: 6px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
+            width: 100%;
         }
         
         .submit-btn:hover {
             background: var(--secondary-blue);
-            transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
         
         /* Footer */
         footer {
-            background: var(--primary-blue);
+            background: var(--dark-gray);
             color: var(--white);
-            padding: var(--spacing-xl) var(--spacing-lg);
+            padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-lg);
         }
         
         .footer-content {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: var(--spacing-xl);
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
         .footer-section h4 {
-            color: var(--gold);
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+        
+        .footer-section p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.7;
+        }
+        
+        .footer-section a {
+            display: block;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            margin-bottom: var(--spacing-xs);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover { color: var(--gold); }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
             margin-bottom: var(--spacing-md);
         }
         
-        .footer-section p,
-        .footer-section a {
-            color: var(--light-blue);
-            text-decoration: none;
-            display: block;
-            margin-bottom: var(--spacing-xs);
-        }
-        
-        .footer-section a:hover {
-            color: var(--white);
+        .footer-logo img {
+            height: 50px;
+            width: auto;
         }
         
         .footer-bottom {
             max-width: 1280px;
-            margin: var(--spacing-xl) auto 0;
+            margin: 0 auto;
             padding-top: var(--spacing-lg);
-            border-top: 1px solid var(--secondary-blue);
             text-align: center;
-            color: var(--light-blue);
         }
         
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            background: var(--white);
+            padding: 0 var(--spacing-xl) var(--spacing-md);
+        }
+
+        .mobile-nav.active { display: block; }
+
+        .mobile-nav a {
+            display: block;
+            padding: var(--spacing-sm) 0;
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .mobile-nav a:last-child { border-bottom: none; }
+
+        .mobile-nav a:hover { color: var(--primary-blue); }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid,
+            .contact-grid { grid-template-columns: 1fr; }
             
-            h1 { font-size: 2rem; }
+            .about-image { order: -1; height: 350px; }
+            
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
             h2 { font-size: 1.75rem; }
             
-            .hero h1 {
-                font-size: 2.25rem;
-            }
+            .nav-links, .cta-button { display: none; }
+            .mobile-menu-btn { display: flex; }
             
-            .hero-buttons {
-                flex-direction: column;
-            }
+            .hero h1 { font-size: 2.25rem; }
+            .hero-buttons { flex-direction: column; }
             
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-number { font-size: 2.25rem; }
             
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
+            .footer-content { grid-template-columns: 1fr; }
+            
+            .logo-img { height: 60px; }
+            .logo-text { font-size: 0.95rem; }
         }
     </style>
 </head>
-<body>
+<body id="top">
     <header>
         <nav>
-            <a href="#" class="logo">
-                <div class="logo-icon">DR9</div>
-                <div class="logo-text">
-                    <span class="company-name">DR9 Engineering Associates LLC</span>
-                    <span class="tagline">Building Excellence</span>
-                </div>
+            <a href="#top" class="logo">
+                <img src="assets/dr9_logo.png" alt="DR9 Engineering and Construction - Strength in Every Structure" class="logo-img">
+                <span class="logo-text">DR9 Engineering<br>and Construction</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -655,17 +749,28 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a href="#contact" class="cta-button">Get a Quote</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#services" onclick="closeMobileMenu()">Services</a>
+            <a href="#about" onclick="closeMobileMenu()">About</a>
+            <a href="#why-choose" onclick="closeMobileMenu()">Why Choose Us</a>
+            <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+        </div>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Professional <span class="hero-accent">Construction Management</span> &amp; Services in Miami</h1>
-                <p>DR9 Engineering Associates LLC delivers exceptional construction management and construction services throughout the Miami area. Excellence in every project.</p>
+                <h1>Built on <span class="hero-accent">Strength</span>, Delivered with Excellence</h1>
+                <p>DR9 Engineering and Construction brings unwavering commitment and powerful expertise to every construction project in South Florida. Like our symbol, the elephant, we're known for strength, reliability, and an unforgettable standard of service.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn-primary">Start Your Project</a>
-                    <a href="#services" class="btn-secondary">Our Services</a>
+                    <a href="#services" class="btn-secondary">Explore Our Services</a>
                 </div>
             </div>
         </section>
@@ -674,38 +779,38 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Our Services</h2>
-                    <p>Comprehensive construction solutions tailored to your project needs</p>
+                    <p>Comprehensive construction solutions backed by engineering expertise and unwavering commitment to your success</p>
                 </div>
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon">🏗️</div>
-                        <h3>Construction Management</h3>
-                        <p>Expert project oversight from planning through completion. We coordinate all aspects of your construction project to ensure timely delivery, budget adherence, and quality standards.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">🏢</div>
-                        <h3>Commercial Construction</h3>
-                        <p>Professional commercial building services for offices, retail spaces, and industrial facilities. We bring your vision to life with precision and excellence.</p>
-                    </div>
-                    <div class="service-card">
                         <div class="service-icon">🏡</div>
-                        <h3>Residential Construction</h3>
-                        <p>Custom residential construction services including new builds, renovations, and additions. Quality craftsmanship for your dream home.</p>
+                        <h3>Single-Family Home Construction</h3>
+                        <p>Ground-up construction of custom residential homes from planning to completion.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">📋</div>
-                        <h3>Project Planning</h3>
-                        <p>Comprehensive planning and design coordination services. We work closely with architects and engineers to optimize your project from concept to completion.</p>
+                        <div class="service-icon">🏗️</div>
+                        <h3>General Contracting</h3>
+                        <p>Comprehensive project management, coordination, and execution of construction projects.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔧</div>
+                        <h3>Restoration Services</h3>
+                        <p>Concrete restoration for residential and commercial properties.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🔨</div>
+                        <h3>Renovation &amp; Remodeling</h3>
+                        <p>Interior and exterior upgrades, repairs, and full home or commercial remodeling.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-icon">⚙️</div>
                         <h3>Engineering Services</h3>
-                        <p>Structural engineering, MEP coordination, and technical consulting. Our expertise ensures your project meets all safety and regulatory requirements.</p>
+                        <p>Structural and civil engineering support including design review, inspections, project planning, and technical consultation for safe and compliant construction.</p>
                     </div>
                     <div class="service-card">
-                        <div class="service-icon">✅</div>
-                        <h3>Quality Control</h3>
-                        <p>Rigorous quality assurance and site inspection services. We maintain the highest standards throughout every phase of construction.</p>
+                        <div class="service-icon">📋</div>
+                        <h3>Owner's Representative Services</h3>
+                        <p>Acting on behalf of property owners to manage projects, oversee contractors, monitor quality, control budgets and schedules, and ensure the project is delivered as per the owner's expectations.</p>
                     </div>
                 </div>
             </div>
@@ -715,17 +820,12 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image">
-                        🏛️
+                        <img src="assets/dr9_logo.png" alt="DR9 Engineering">
                     </div>
                     <div class="about-content">
-                        <h2>About DR9 Engineering Associates</h2>
-                        <p>DR9 Engineering Associates LLC is a leading construction management and construction services firm serving the Miami area. We combine technical expertise with exceptional project management to deliver outstanding results for our clients.</p>
-                        <p>Our commitment to quality, safety, and client satisfaction has established us as a trusted partner for commercial and residential construction projects throughout South Florida.</p>
-                        <div class="credentials">
-                            <h4>Leadership</h4>
-                            <p><strong>Dilip Kumar Reddy</strong> - Chief Executive Officer</p>
-                            <p>Master's in Construction Management, Florida Institute of Technology</p>
-                        </div>
+                        <h2>About DR9 Engineering and Construction</h2>
+                        <p>DR9 Engineering and Construction is a leading construction management and construction services firm serving the greater South Florida area. Our name carries the strength and reliability of the elephant - an animal revered for its power, wisdom, and unfailing memory.</p>
+                        <p>Just as elephants are known for their steadfast nature and ability to carry tremendous loads, we shoulder the full weight of your construction project with precision, integrity, and an unwavering commitment to excellence. Our team combines technical expertise with a client-first approach that has made us a trusted partner throughout South Florida.</p>
                     </div>
                 </div>
             </div>
@@ -735,14 +835,14 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Completed</div>
+                    <div class="stat-label">Projects</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">100%</div>
                     <div class="stat-label">Client Satisfaction</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">15+</div>
+                    <div class="stat-number">1+</div>
                     <div class="stat-label">Years Experience</div>
                 </div>
                 <div class="stat-card">
@@ -755,29 +855,29 @@
         <section id="why-choose" class="why-choose">
             <div class="container">
                 <div class="section-header">
-                    <h2>Why Choose DR9 Engineering Associates</h2>
-                    <p>Experience the difference of working with Miami's trusted construction experts</p>
+                    <h2>The DR9 Difference</h2>
+                    <p>Why South Florida's most discerning clients trust DR9 Engineering and Construction</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature">
                         <div class="feature-icon">🎯</div>
                         <h4>Expert Leadership</h4>
-                        <p>Led by experienced professionals with advanced degrees and proven track records in construction management.</p>
+                        <p>Led by professionals with advanced degrees and proven track records. Our leadership brings both technical depth and strategic vision to every project.</p>
                     </div>
                     <div class="feature">
-                        <div class="feature-icon">💼</div>
-                        <h4>Professional Standards</h4>
-                        <p>We adhere to the highest industry standards and best practices in all aspects of construction.</p>
+                        <div class="feature-icon">💪</div>
+                        <h4>Unwavering Strength</h4>
+                        <p>Like our elephant symbol, we bring tremendous capability and reliability. No project is too complex, no challenge too great for our team.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">🤝</div>
-                        <h4>Client-Focused</h4>
-                        <p>Your satisfaction is our priority. We maintain clear communication and transparency throughout your project.</p>
+                        <h4>Client Partnership</h4>
+                        <p>Your success is our mission. We maintain transparent communication and treat every project as if it were our own, because your trust matters.</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">📊</div>
                         <h4>On-Time Delivery</h4>
-                        <p>Proven project management systems ensure your construction is completed on schedule and within budget.</p>
+                        <p>Our proven project management systems and meticulous planning ensure your construction is completed on schedule and within budget.</p>
                     </div>
                 </div>
             </div>
@@ -786,8 +886,8 @@
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section-header">
-                    <h2>Get in Touch</h2>
-                    <p>Ready to start your construction project? Contact us today for a consultation</p>
+                    <h2>Let's Build Together</h2>
+                    <p>Ready to start your construction project? Contact us today for a consultation and discover the DR9 difference</p>
                 </div>
                 <div class="contact-grid">
                     <div class="contact-info">
@@ -796,21 +896,21 @@
                             <div class="contact-icon">📍</div>
                             <div>
                                 <strong>Location</strong>
-                                <p>Miami, Florida</p>
+                                <p>South Florida</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">📧</div>
                             <div>
                                 <strong>Email</strong>
-                                <p>contact@dr9ec.com</p>
+                                <p><a href="mailto:admin@dr9ec.com">admin@dr9ec.com</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">📞</div>
                             <div>
                                 <strong>Phone</strong>
-                                <p>(305) 555-0123</p>
+                                <p><a href="tel:+17865750664">+1 (786) 575-0664</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -821,7 +921,7 @@
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <form class="contact-form" id="contactForm" onsubmit="sendEmail(event)">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -831,24 +931,25 @@
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="service">Service Interested In *</label>
-                            <select id="service" name="service" required>
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
                                 <option value="">Select a service</option>
-                                <option value="construction-management">Construction Management</option>
-                                <option value="commercial">Commercial Construction</option>
-                                <option value="residential">Residential Construction</option>
-                                <option value="planning">Project Planning</option>
-                                <option value="engineering">Engineering Services</option>
-                                <option value="other">Other</option>
+                                <option value="Single-Family Home Construction">Single-Family Home Construction</option>
+                                <option value="General Contracting">General Contracting</option>
+                                <option value="Restoration Services">Restoration Services</option>
+                                <option value="Renovation & Remodeling">Renovation &amp; Remodeling</option>
+                                <option value="Engineering Services">Engineering Services</option>
+                                <option value="Owner's Representative Services">Owner's Representative Services</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project, timeline, and any specific requirements..."></textarea>
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
@@ -860,8 +961,11 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>DR9 Engineering Associates LLC</h4>
-                <p>Professional construction management and construction services serving the Miami area. Building excellence through expertise, integrity, and innovation.</p>
+                <div class="footer-logo">
+                    <img src="assets/dr9_logo.png" alt="DR9 Engineering">
+                </div>
+                <h4>DR9 Engineering and Construction</h4>
+                <p>Professional construction management and construction services serving the South Florida area. Built on strength, delivered with excellence. We bring the power and reliability of the elephant to every project we undertake.</p>
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
@@ -872,38 +976,102 @@
             </div>
             <div class="footer-section">
                 <h4>Services</h4>
-                <a href="#services">Construction Management</a>
-                <a href="#services">Commercial Construction</a>
-                <a href="#services">Residential Construction</a>
+                <a href="#services">Single-Family Home Construction</a>
+                <a href="#services">General Contracting</a>
+                <a href="#services">Restoration Services</a>
+                <a href="#services">Renovation &amp; Remodeling</a>
                 <a href="#services">Engineering Services</a>
+                <a href="#services">Owner's Representative Services</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 DR9 Engineering Associates LLC. All rights reserved. | Licensed &amp; Insured | Miami, Florida</p>
+            <p>&copy; 2026 DR9 Engineering and Construction. All rights reserved. | Licensed &amp; Insured | South Florida</p>
         </div>
     </footer>
 
     <script>
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData);
-            
-            alert(`Thank you for your inquiry, ${data.name}!\n\nWe have received your message about ${data.service} and will contact you shortly at ${data.email}.\n\nA member of our team will reach out within 24 hours to discuss your project.`);
-            
-            event.target.reset();
+        // IMPORTANT: Replace this URL with your deployed Google Apps Script URL
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymg9aZ_5dV6oubLjLdiT7JpAAsa3zql2mCrdUR0dcQpRKGth-J4frs5yDJd1fiZI3M0w/exec';
+
+        function sendEmail(e) {
+            e.preventDefault();
+
+            var btn = document.querySelector('.submit-btn');
+            var originalText = btn.textContent;
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            var formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value || 'Not specified',
+                message: document.getElementById('message').value || 'Not provided'
+            };
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            })
+            .then(function() {
+                showFormMessage('Thank you, ' + formData.name + '! Your message has been sent successfully. We will contact you shortly.', 'success');
+                document.getElementById('contactForm').reset();
+            })
+            .catch(function() {
+                showFormMessage('Sorry, something went wrong. Please call us at +1 (786) 575-0664 or email admin@dr9ec.com directly.', 'error');
+            })
+            .finally(function() {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+        }
+
+        function showFormMessage(text, type) {
+            var existing = document.querySelector('.form-message');
+            if (existing) existing.remove();
+
+            var msg = document.createElement('div');
+            msg.className = 'form-message';
+            msg.textContent = text;
+            msg.style.padding = '1rem';
+            msg.style.borderRadius = '6px';
+            msg.style.marginTop = '1rem';
+            msg.style.fontWeight = '500';
+
+            if (type === 'success') {
+                msg.style.background = '#f0fdf4';
+                msg.style.color = '#166534';
+                msg.style.border = '1px solid #bbf7d0';
+            } else {
+                msg.style.background = '#fef2f2';
+                msg.style.color = '#991b1b';
+                msg.style.border = '1px solid #fecaca';
+            }
+
+            document.getElementById('contactForm').appendChild(msg);
+
+            setTimeout(function() { msg.remove(); }, 8000);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileNav').classList.toggle('active');
         }
         
-        // Smooth scrolling for navigation links
+        function closeMobileMenu() {
+            document.getElementById('mobileNav').classList.remove('active');
+        }
+        
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    window.scrollTo({
+                        top: target.getBoundingClientRect().top + window.pageYOffset - 100,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -911,4 +1079,3 @@
     </script>
 </body>
 </html>
-
