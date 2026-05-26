@@ -1061,6 +1061,26 @@
         }
 
         body.a11y-underline-links a { text-decoration: underline !important; }
+
+        /* Accessibility Statement */
+        .a11y-statement {
+            background: var(--light-gray);
+            border-top: 1px solid var(--light-blue);
+        }
+
+        .a11y-statement h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .a11y-statement p {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .a11y-statement a {
+            color: var(--secondary-blue);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body id="top">
@@ -1344,13 +1364,15 @@
         </div>
     </footer>
 
-    <!-- Accessibility Statement (hidden, linked from footer) -->
-    <div id="accessibility-statement" style="max-width: 800px; margin: 0 auto; padding: 3rem 2rem; display: none;">
-        <h2>Accessibility Statement</h2>
-        <p>DR9 Engineering and Construction is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards.</p>
-        <p>This website strives to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible to people with a wide range of disabilities.</p>
-        <p>If you experience any difficulty accessing any part of this website, please contact us at <a href="mailto:admin@dr9ec.com">admin@dr9ec.com</a> or call <a href="tel:+17865750664">+1 (786) 575-0664</a>.</p>
-    </div>
+    <!-- Accessibility Statement -->
+    <section id="accessibility-statement" class="a11y-statement" aria-label="Accessibility Statement">
+        <div style="max-width: 800px; margin: 0 auto; padding: 3rem 2rem;">
+            <h2>Accessibility Statement</h2>
+            <p>DR9 Engineering and Construction is committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply the relevant accessibility standards.</p>
+            <p>This website strives to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA. These guidelines explain how to make web content more accessible to people with a wide range of disabilities.</p>
+            <p>If you experience any difficulty accessing any part of this website, please contact us at <a href="mailto:admin@dr9ec.com">admin@dr9ec.com</a> or call <a href="tel:+17865750664">+1 (786) 575-0664</a>.</p>
+        </div>
+    </section>
 
     <!-- Accessibility Widget -->
     <button class="a11y-widget-btn" onclick="toggleA11yPanel()" aria-label="Accessibility options" aria-expanded="false" aria-controls="a11yPanel">
@@ -1484,14 +1506,6 @@
             }
         });
 
-        // Show accessibility statement when linked
-        if (window.location.hash === '#accessibility-statement') {
-            document.getElementById('accessibility-statement').style.display = 'block';
-        }
-        window.addEventListener('hashchange', function() {
-            var stmt = document.getElementById('accessibility-statement');
-            stmt.style.display = window.location.hash === '#accessibility-statement' ? 'block' : 'none';
-        });
         
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
